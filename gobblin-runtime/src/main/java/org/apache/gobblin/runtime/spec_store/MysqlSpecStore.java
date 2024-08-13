@@ -173,6 +173,11 @@ public class MysqlSpecStore extends MysqlBaseSpecStore {
     return new SpecificSqlStatements();
   }
 
+  @Override
+  protected SqlStatements createSqlStatements(Config config) {
+    return createSqlStatements();
+  }
+
   /** Support search, unlike base class (presumably via a {@link org.apache.gobblin.runtime.api.FlowSpecSearchObject}). */
   @Override
   public Collection<Spec> getSpecsImpl(SpecSearchObject specSearchObject) throws IOException {

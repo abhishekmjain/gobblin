@@ -173,6 +173,7 @@ public class ConfigurationKeys {
   public static final String FLOW_UNSCHEDULE_KEY = "flow.unschedule";
   public static final String FLOW_OWNING_GROUP_KEY = "flow.owningGroup";
   public static final String FLOW_SPEC_EXECUTOR = "flow.edge.specExecutors";
+  public static final String FLOW_SPEC_TAG_FILTER_KEY = "flow.tag.filter";
 
   /**
    * Common topology configuration properties.

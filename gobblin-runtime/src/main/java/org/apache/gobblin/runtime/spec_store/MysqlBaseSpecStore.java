@@ -173,7 +173,7 @@ public class MysqlBaseSpecStore extends InstrumentedSpecStore {
     this.tableName = config.getString(ConfigurationKeys.STATE_STORE_DB_TABLE_KEY);
     this.specStoreURI = URI.create(config.getString(ConfigurationKeys.STATE_STORE_DB_URL_KEY));
     this.specSerDe = specSerDe;
-    this.sqlStatements = createSqlStatements();
+    this.sqlStatements = createSqlStatements(config);
 
     withPreparedStatement(this.sqlStatements.createTableStatement, statement ->
       statement.executeUpdate()
@@ -186,6 +186,10 @@ public class MysqlBaseSpecStore extends InstrumentedSpecStore {
 
   protected SqlStatements createSqlStatements() {
     return new SqlStatements();
+  }
+
+  protected SqlStatements createSqlStatements(Config config) {
+    return createSqlStatements();
   }
 
   @Override
