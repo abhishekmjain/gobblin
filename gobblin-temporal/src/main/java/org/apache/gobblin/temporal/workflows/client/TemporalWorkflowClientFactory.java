@@ -120,7 +120,6 @@ public class TemporalWorkflowClientFactory {
                 .setSslContext(sslContext)
                 .setMetricsScope(metricsScope)
                 .build();
-
         return new ManagedWorkflowServiceStubs(WorkflowServiceStubs.newServiceStubs(options));
     }
 
